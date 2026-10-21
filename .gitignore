@@ -5,6 +5,8 @@ __pycache__/
 venv/
 *.xlsx
 *.xls
+*.xlsm
+*.xlsb
 *.csv
 *.tsv
 !tests/fixtures/*.csv
