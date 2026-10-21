@@ -1,0 +1,11 @@
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.venv/
+venv/
+*.xlsx
+*.xls
+*.csv
+*.tsv
+!tests/fixtures/*.csv
+门店投流预算核对.xlsx
