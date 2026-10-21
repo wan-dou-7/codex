@@ -30,6 +30,9 @@ class ReconcileTests(unittest.TestCase):
         }
         report = reconcile([RosterEntry("伽年华示例馆", Decimal("300"), "宁波市")], stores)
         self.assertEqual(report["results"][0]["门店ID"], "20002")
+        conflict = reconcile([RosterEntry("伽年华示例馆", Decimal("300"), "宁波市", "20001")], stores)
+        self.assertFalse(conflict["results"])
+        self.assertIn("城市不一致", conflict["pending"][0]["原因"])
         report = reconcile([RosterEntry("示例馆新别名", Decimal("300"), "杭州市")], stores,
                            {"示例馆新别名": "20001"})
         self.assertEqual(report["results"][0]["门店ID"], "20001")
