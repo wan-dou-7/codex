@@ -4,10 +4,21 @@
 
 ## 快速开始
 
-需要 Python 3.10 或更新版本。
+需要 Python 3.10 或更新版本。第一次使用先安装依赖：
 
 ```bash
 python -m pip install -r requirements.txt
+```
+
+以后每次在电脑上运行 `一键对账.py`，按窗口提示依次选择名单、一个或多个消耗表，再选择结果保存位置：
+
+```bash
+python 一键对账.py
+```
+
+也可以使用命令行：
+
+```bash
 python store_recon.py --roster 激励名单.xlsx --spend 本地推导出.xlsx --out 核对结果.xlsx
 ```
 
@@ -23,7 +34,7 @@ python store_recon.py --roster 激励名单.xlsx --spend 100家-1.xlsx 100家-2.
 python store_recon.py --roster 激励名单.xlsx --roster-sheet 激励名单 --spend 本地推导出.xlsx --spend-sheet 消耗明细
 ```
 
-支持的名单字段至少包括“门店名称”和“预算”，常见列名如“激励名单门店”“激励预算（元）”也能识别。消耗表至少包括“门店ID”“门店名称”和“消耗”，并尽量提供“城市”。字段名暂不匹配时，修改 Excel 表头或在 `ALIASES` 中加入后台使用的列名即可。
+支持的名单字段至少包括“门店名称”和“预算”，常见列名如“激励名单门店”“激励预算（元）”也能识别。消耗表至少包括“门店ID”“门店名称”和“消耗”，并尽量提供“城市”。一键窗口默认读取每个Excel的当前工作表；多工作表或列名暂不匹配时，使用命令行指定工作表，或在 `ALIASES` 中加入后台使用的列名。
 
 ## 匹配规则
 
